@@ -7,7 +7,7 @@ module Models # 实体扩展模块
       base.send(:include, InstanceMethods)
     end
 
-    def self.handleize(input) # 中文转为拼音、去掉首尾空格、转小写、空格和小数点转为横杠、删除其他特殊字符
+    def self.handleize(input) # 中文转为拼音、去掉首尾空格、转小写、空格和小数点转为横杠、删除Other特殊字符
       Pinyin.t(input).gsub(/[^\w\-\s\.]/, '').strip.downcase.gsub(/\s+|\./, '-')
     end
 

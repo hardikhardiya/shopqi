@@ -35,7 +35,7 @@ describe Shipping do
 
   context 'with city shipping' do # 指定某个市的物流
 
-    let(:city_shipping) { Factory(:shipping, shop: shop, code: shenzhen) } # 深圳市
+    let(:city_shipping) { Factory(:shipping, shop: shop, code: shenzhen) } # Shenzhen
 
     let(:weight_based_shipping_rate){ Factory(:weight_based_shipping_rate, shipping: city_shipping, name: '特快专递EMS') }
 

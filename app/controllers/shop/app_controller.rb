@@ -164,7 +164,7 @@ class Shop::AppController < ActionController::Base
       show_errors(exception)
     end
 
-    def rescue_other(exception) # 其他错误，详细记录
+    def rescue_other(exception) # Other错误，详细记录
       logger.error(exception.backtrace.join("\n"))
       show_errors(exception)
     end

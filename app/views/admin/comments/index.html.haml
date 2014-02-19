@@ -16,11 +16,11 @@
     %a#blog-filter-link(href= "#")=search_label :blog_title,'所有'
     %ul.dropdown{:style => "display: none"}
       %li
-        %strong 博客
+        %strong Blog
       -blogs.each do |blog|
         %li=link_to blog.title, search_path(:comments_path,blog_title_eq: blog.title)
       %li.filter-show-all=link_to '显示所有', search_path(:comments_path,blog_title_eq: nil)
-  博客
+  Blog
 #comments
   =form_for :comment,url: set_comments_path,id: 'batch-form' do |f|
     %div{:style => "height: 32px;"}

@@ -61,7 +61,7 @@ describe "Theme::Themes", js: true do # 主题商店
 
     end
 
-    describe "others" do # 其他主题
+    describe "others" do # Other主题
 
       it "should be index" do
         all('#themes li').size.should_not eql 0

@@ -86,7 +86,7 @@ describe "LinkLists", js: true do
             within '.editing-link-list' do # 链接记录
               within :xpath, './li[1]' do
                 fill_in 'title', with: '商店首页'
-                select '其他网址'
+                select 'Other网址'
                 fill_in 'url', with: '/home'
               end
             end

@@ -20,7 +20,7 @@ class Blog < ActiveRecord::Base
   end
 end
 
-#博客文章
+#Blog文章
 class Article < ActiveRecord::Base
   belongs_to :blog
   belongs_to :user

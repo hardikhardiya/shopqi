@@ -26,7 +26,7 @@ class SearchDrop < Liquid::Drop
 
 end
 
-# 結果Item包括商品、博客、页面
+# 結果Item包括商品、Blog、页面
 class SearchItemDrop < Liquid::Drop
 
   def initialize(item)

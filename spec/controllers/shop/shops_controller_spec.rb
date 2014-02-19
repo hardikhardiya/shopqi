@@ -114,7 +114,7 @@ describe Shop::ShopsController do
 
     end
 
-    context 'search engine' do # 搜索引擎
+    context 'search engine' do # Search Engine
 
       it 'should get http route' do
         https?('www.lvh.me', 'Baiduspider+(+http://www.baidu.com/search/spider.htm)').should be_false # 百度
@@ -142,7 +142,7 @@ describe Shop::ShopsController do
   end
 
   def ssl_exclude? # 此处与config/environments/production.rb中的ssl内容
-    return true if env['HTTP_USER_AGENT'] =~ /(bot|crawl|spider)/i # 搜索引擎不使用https协议
+    return true if env['HTTP_USER_AGENT'] =~ /(bot|crawl|spider)/i # Search Engine不使用https协议
     host = env['SERVER_NAME']
     path = env['PATH_INFO']
     return false if host == Setting.host # shopqi.com

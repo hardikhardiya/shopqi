@@ -58,7 +58,7 @@ class Admin::EmailsController < Admin::AppController
       id: 9999,
       email: "mahb45@gmail.com",
       shipping_address_attributes: {
-        name: '马海波',
+        name: 'Horse海波',
         province: '440000',
         city: '440300',
         district: '440305',

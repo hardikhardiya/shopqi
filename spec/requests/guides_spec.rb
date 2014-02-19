@@ -51,7 +51,7 @@ describe "Guides", js: true do
       end
 
       it "should pick another" do
-        click_on '选择其他步骤'
+        click_on '选择Other步骤'
         sleep 3 # 等待opacity渲染
         click_on '添加商品'
         sleep 3
@@ -85,7 +85,7 @@ describe "Guides", js: true do
       end
 
       it "should pick another" do
-        click_on '选择其他步骤'
+        click_on '选择Other步骤'
         sleep 3 # 等待opacity渲染
         click_on '定制外观'
         sleep 3
@@ -118,7 +118,7 @@ describe "Guides", js: true do
       end
 
       it "should pick another" do
-        click_on '选择其他步骤'
+        click_on '选择Other步骤'
         sleep 3 # 等待opacity渲染
         click_on '发布内容'
         sleep 3
@@ -151,7 +151,7 @@ describe "Guides", js: true do
       end
 
       it "should pick another" do
-        click_on '选择其他步骤'
+        click_on '选择Other步骤'
         sleep 3 # 等待opacity渲染
         click_on '支付网关'
         sleep 3
@@ -184,7 +184,7 @@ describe "Guides", js: true do
       end
 
       it "should pick another" do
-        click_on '选择其他步骤'
+        click_on '选择Other步骤'
         sleep 3 # 等待opacity渲染
         click_on '物流配送'
         sleep 3
@@ -211,13 +211,13 @@ describe "Guides", js: true do
       end
 
       it "should show check off" do
-        has_content?('在此页面您可以为您的商店绑定其他域名').should be_true
+        has_content?('在此页面您可以为您的商店绑定Other域名').should be_true
         find('#task-checkoff').visible?.should be_true
         find('#progress-bar').visible?.should be_false
       end
 
       it "should pick another" do
-        click_on '选择其他步骤'
+        click_on '选择Other步骤'
         sleep 3 # 等待opacity渲染
         click_on '绑定域名'
         sleep 3

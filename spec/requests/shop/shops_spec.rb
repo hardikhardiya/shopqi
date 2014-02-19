@@ -43,9 +43,9 @@ describe "Shop::Shops", js:true do
       click_on '结算'
       #收货人
       fill_in 'order[email]', with: 'mahb45@gmail.com'
-      fill_in 'order[shipping_address_attributes][name]', with: '马海波'
+      fill_in 'order[shipping_address_attributes][name]', with: 'Horse海波'
       select '广东省', form: 'order[shipping_address_attributes][province]'
-      select '深圳市', form: 'order[shipping_address_attributes][city]'
+      select 'Shenzhen', form: 'order[shipping_address_attributes][city]'
       select '南山区', form: 'order[shipping_address_attributes][district]'
       fill_in 'order[shipping_address_attributes][address1]', with: '科技园'
       fill_in 'order[shipping_address_attributes][phone]', with: '13928458888'

@@ -159,3 +159,8 @@ class CustomerTag < ActiveRecord::Base
   end
 end
 
+
+
+
+
+

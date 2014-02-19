@@ -21,7 +21,7 @@ describe Shopqi::RegistrationsController do
           phone: "13928458888",
           plan: "professional"
         },
-        name: "马海波",
+        name: "Horse海波",
         email: "mahb45@gmail.com",
         password: "666666",
         password_confirmation: "666666",

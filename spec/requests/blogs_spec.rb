@@ -14,7 +14,7 @@ describe "Blogs", js:true do
 
     it "should be add" do # 新增
       visit pages_path
-      click_on '新增博客'
+      click_on '新增Blog'
       fill_in 'blog[title]', with: '商品介绍'
       select '禁用评论', form: 'blog_commentable'
       click_on '新增'

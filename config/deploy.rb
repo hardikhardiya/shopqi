@@ -109,7 +109,7 @@ namespace :dragonfly do # 图片缓存
 end
 after 'deploy:update_code', 'dragonfly:symlink'
 
-namespace :sitemaps do # 搜索引擎网站地图
+namespace :sitemaps do # Search Engine网站地图
 
   desc "Symlink the sitemaps directory"
   task :symlink, roles: :app do

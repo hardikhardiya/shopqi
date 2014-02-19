@@ -25,7 +25,7 @@ describe "Customers", js: true do
     o
   end
 
-  let(:customer) { shop.customers.where(name: '马海波').first }
+  let(:customer) { shop.customers.where(name: 'Horse海波').first }
 
   before :each do
     order
@@ -43,7 +43,7 @@ describe "Customers", js: true do
         has_content?('姓名 不能为空').should be_true
         has_content?('邮箱 不能为空').should be_true
       end
-      fill_in '姓名', with: '马海波'
+      fill_in '姓名', with: 'Horse海波'
       fill_in '邮箱', with: 'mahb45@gmail.com'
       click_on '保存'
       within '#message_block' do
@@ -54,7 +54,7 @@ describe "Customers", js: true do
     # 保存
     it "should be save" do
       within '#new-customer-screen' do
-        fill_in '姓名', with: '马海波'
+        fill_in '姓名', with: 'Horse海波'
         fill_in '邮箱', with: 'saberma@shopqi.com'
         fill_in '公司', with: '索奇'
         fill_in '电话', with: '13928452888'
@@ -70,7 +70,7 @@ describe "Customers", js: true do
       click_on '保存'
       has_no_css?('#new-customer-screen').should be_true
       within '#customer-summary' do
-        has_content?('马海波').should be_true
+        has_content?('Horse海波').should be_true
         has_content?('13928452888').should be_true
         has_content?('北京市').should be_true
         has_content?('市辖区').should be_true
@@ -91,26 +91,26 @@ describe "Customers", js: true do
       # 基本信息
       it "should show info" do
         within '#customer-summary .first' do
-          has_content?('马海波').should be_true
+          has_content?('Horse海波').should be_true
           has_content?('mahb45@gmail.com').should be_true
           has_content?('13928452888').should be_true
         end
         within '#customer-summary' do
           has_content?('广东省').should be_true
-          has_content?('深圳市').should be_true
+          has_content?('Shenzhen').should be_true
           has_content?('南山区').should be_true
         end
       end
 
       # 更多地址
       it "should show more address" do
-        customer.addresses.create name: '马海波', province: '440000', city: '440300', district: '440305', address1: '311', phone: '13928452888'
+        customer.addresses.create name: 'Horse海波', province: '440000', city: '440300', district: '440305', address1: '311', phone: '13928452888'
         visit customer_path(customer)
         click_on '另外 1 个地址…'
         within '#more-customer-addresses' do
-          has_content?('马海波').should be_true
+          has_content?('Horse海波').should be_true
           has_content?('广东省').should be_true
-          has_content?('深圳市').should be_true
+          has_content?('Shenzhen').should be_true
           has_content?('南山区').should be_true
         end
         click_on '隐藏地址…'
@@ -148,7 +148,7 @@ describe "Customers", js: true do
         click_on '编辑'
         within '#edit-customer-screen' do
           has_content?('mahb45@gmail.com').should be_true
-          fill_in 'customer[name]', with: '马波'
+          fill_in 'customer[name]', with: 'Horse波'
           fill_in 'name', with: '李卫辉'
           fill_in '公司', with: '索奇'
           fill_in '电话', with: '13751042627'
@@ -165,7 +165,7 @@ describe "Customers", js: true do
         within '#customer-summary' do
           has_content?('李卫辉').should be_true
           has_content?('13751042627').should be_true
-          has_content?('马波').should be_true
+          has_content?('Horse波').should be_true
           has_content?('北京市').should be_true
           has_content?('市辖区').should be_true
           has_content?('东城区').should be_true
@@ -177,7 +177,7 @@ describe "Customers", js: true do
         within '#customer-summary' do
           has_content?('李卫辉').should be_true
           has_content?('13751042627').should be_true
-          has_content?('马波').should be_true
+          has_content?('Horse波').should be_true
           has_content?('北京市').should be_true
           has_content?('市辖区').should be_true
           has_content?('东城区').should be_true
@@ -208,7 +208,7 @@ describe "Customers", js: true do
       it "should show current search" do
         visit customers_path
         find('#customer-search_field').click # 一点击查询输入框才会显示过滤器
-        fill_in_blur 'customer-search_field', with: '马海波'
+        fill_in_blur 'customer-search_field', with: 'Horse海波'
         select '订单数'
         select '小于'
         fill_in 'filter-value', with: '10'
@@ -218,7 +218,7 @@ describe "Customers", js: true do
           within :xpath, './li[2]' do
             has_content?('当前查询').should be_true
             sleep 10
-            find(:xpath, './ul/li[1]').text.should eql '关键字:马海波'
+            find(:xpath, './ul/li[1]').text.should eql '关键字:Horse海波'
             find(:xpath, './ul/li[2]').text.should eql '订单数 小于 10'
           end
         end
@@ -238,7 +238,7 @@ describe "Customers", js: true do
       # 保存分组
       it "should be save" do
         visit customers_path
-        fill_in_blur 'customer-search_field', with: '马海波'
+        fill_in_blur 'customer-search_field', with: 'Horse海波'
         click_on '保存为顾客分组'
         fill_in 'customer_group[name]', with: '大客户'
         click_on '保存'
@@ -246,7 +246,7 @@ describe "Customers", js: true do
           find(:xpath, './li[2]').visible?.should be_false # 隐藏当前查询
           within :xpath, './li[6]' do
             has_content?('大客户').should be_true
-            find(:xpath, './ul/li[1]').text.should eql '关键字:马海波'
+            find(:xpath, './ul/li[1]').text.should eql '关键字:Horse海波'
           end
         end
       end
@@ -257,10 +257,10 @@ describe "Customers", js: true do
         within '#customer-groups' do
           find(:xpath, './li[3]').click # 接收营销邮件
         end
-        fill_in_blur 'customer-search_field', with: '马海波'
+        fill_in_blur 'customer-search_field', with: 'Horse海波'
         within '#customer-groups' do
           within :xpath, './li[3]' do
-            find(:xpath, './ul/li[1]').text.should eql '关键字:马海波'
+            find(:xpath, './ul/li[1]').text.should eql '关键字:Horse海波'
             find(:xpath, './ul/li[2]').text.should eql '接收营销邮件 是'
           end
           click_on '更新'
@@ -388,10 +388,10 @@ describe "Customers", js: true do
         visit customers_path
         has_content?('找到 2位 顾客').should be_true
         has_content?('李卫辉').should be_true
-        fill_in_blur 'customer-search_field', with: '马海波'
+        fill_in_blur 'customer-search_field', with: 'Horse海波'
         sleep 5
         has_content?('找到 1位 顾客').should be_true
-        has_content?('马海波').should be_true
+        has_content?('Horse海波').should be_true
         has_content?('李卫辉').should be_false
       end
 
@@ -399,8 +399,8 @@ describe "Customers", js: true do
         visit customers_path
         within '#customer-table_list' do
           within :xpath, './tr[1]' do
-            find('.customer-name a').text.should eql '马海波'
-            find(:xpath, './td[4]').text.should eql '广东省深圳市南山区'
+            find('.customer-name a').text.should eql 'Horse海波'
+            find(:xpath, './td[4]').text.should eql '广东省Shenzhen南山区'
             find(:xpath, './td[5]').text.should eql '30' #消费金额
             find(:xpath, './td[6]').text.should eql '1' #订单数
 

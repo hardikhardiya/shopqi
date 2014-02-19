@@ -3,7 +3,7 @@ App.Views.Task.Checkoff = Backbone.View.extend
 
   events:
     "click #complete-task-button": "complete" # 完成任务
-    "click #skip-task-button": "skip" # 选择其他任务
+    "click #skip-task-button": "skip" # 选择Other任务
 
   initialize: ->
     this.render()

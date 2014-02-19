@@ -23,7 +23,7 @@ class ShopObserver < ActiveRecord::Observer
 <li>商店主要销售商品类型</li>
 <li>公司地址</li>
 </ul>
-<p>请进入后台管理的<a href="/admin/pages">页面&博客</a>，修改此页面内容。</p>
+<p>请进入后台管理的<a href="/admin/pages">页面&Blog</a>，修改此页面内容。</p>
     }
 
     # 主菜单(首页、商品列表、关于我们)，页脚(查询、关于我们)
@@ -35,7 +35,7 @@ class ShopObserver < ActiveRecord::Observer
     footer.links.create title: '查询', link_type: 'search', url: '/search', position: 1
     footer.links.create title: '关于我们', link_type: 'page', url: "/pages/#{about_us_page.handle}", subject_handle: about_us_page.handle, position: 2
 
-    shop.blogs.create title: '最新动态', handle: 'news', commentable: 'no' # 博客(最新动态)
+    shop.blogs.create title: '最新动态', handle: 'news', commentable: 'no' # Blog(最新动态)
 
     shop.update_attributes password_enabled: true, password: Random.new.rand(1000..9999) # 前台商店密码保护，用户完成指引任务启用商店会清除
 

@@ -3,7 +3,7 @@ App.Views.Signup.Theme.Index = Backbone.View.extend
 
   events:
     'click #show-more-themes': 'more' # 更多主题
-    'click #current-theme a': 'show' # 挑选其他主题
+    'click #current-theme a': 'show' # 挑选Other主题
     'click #theme-hint a': 'skip' # 跳过这一步
 
   initialize: ->

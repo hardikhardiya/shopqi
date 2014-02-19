@@ -1,7 +1,7 @@
 # encoding: utf-8
 FactoryGirl.define do
   factory :blog do
-    title '博客1'
+    title 'Blog1'
     commentable 'no'
     handle 'blog1'
   end

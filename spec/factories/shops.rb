@@ -6,7 +6,7 @@
 #  u.name '测试商店'
 #  u.title '快乐购物'
 #  u.province '广东省'
-#  u.city '深圳市'
+#  u.city 'Shenzhen'
 #  u.address '世界之窗'
 #  u.keywords '衣服 鞋子'
 #  u.public 1

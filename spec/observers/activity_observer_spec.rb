@@ -9,7 +9,7 @@ describe ActivityObserver do
 
   context ".after_create" do
     it "should be insert new activity" do
-      #初始化shop中包含了创建首页商品集合,和博客最新动态
+      #初始化shop中包含了创建首页商品集合,和Blog最新动态
       expect do
         shop
       end.to change(Activity,:count).by(2)

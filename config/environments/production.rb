@@ -17,7 +17,7 @@ Shopqi::Application.configure do
   # config.force_ssl = true
 
   config.middleware.use Rack::SSL, exclude: lambda {|env| # 测试用例:spec/controllers/shop/shops_controller_spec.rb
-    return true if env['HTTP_USER_AGENT'] =~ /(bot|crawl|spider)/i # 搜索引擎不使用https协议
+    return true if env['HTTP_USER_AGENT'] =~ /(bot|crawl|spider)/i # Search Engine不使用https协议
     host = env['SERVER_NAME']
     path = env['PATH_INFO']
     return false if host == Setting.host # shopqi.com

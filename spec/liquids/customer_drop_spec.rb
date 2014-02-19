@@ -51,12 +51,12 @@ describe CustomerDrop do
 
     it "should get detail address" do
       variant = "{{ customer.default_address.detail_address }}"
-      liquid(variant).should eql "广东省深圳市南山区311"
+      liquid(variant).should eql "广东省Shenzhen南山区311"
     end
 
     it "should get  address name" do
       variant = "{{ customer.default_address.name }}"
-      liquid(variant).should eql "马海波"
+      liquid(variant).should eql "Horse海波"
     end
 
     it "should get  address company" do
@@ -71,7 +71,7 @@ describe CustomerDrop do
 
     it 'should get city' do
       variant = "{{ customer.default_address.city }}"
-      liquid(variant).should eql "深圳市"
+      liquid(variant).should eql "Shenzhen"
     end
 
     it 'should get zip' do

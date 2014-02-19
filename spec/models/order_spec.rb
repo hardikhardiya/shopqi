@@ -89,7 +89,7 @@ describe Order do
             email = ActionMailer::Base.deliveries.first # 顾客
             email.subject.should eql "订单 #1001 完成支付\n"
             email = ActionMailer::Base.deliveries.last # 管理员
-            email.subject.should eql "[测试商店] 订单 #1001 , 马海波完成支付\n"
+            email.subject.should eql "[测试商店] 订单 #1001 , Horse海波完成支付\n"
           end
         end
 

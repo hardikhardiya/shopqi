@@ -29,7 +29,7 @@
 7. 顾客详情中的订单列表要标注已取消的订单[saberma] #435
 8. 订单列表显示序号[saberma] #434
 9. 输入优惠码失焦点自动提交[saberma] #433
-10. 订单详情要显示用户的其他订单[saberma] #432
+10. 订单详情要显示用户的Other订单[saberma] #432
 11. 用户查看商品时可以修改选项顺序[saberma] #63
 12. 用户查看商品时可以调整款式位置[saberma] #54
 
@@ -110,7 +110,7 @@
 4. money模板过滤器要支持email格式[saberma] #387
 5. 简化配置文件[saberma] #385
 6. 区分官网和商店的图标[saberma] #384
-7. 禁止搜索引擎访问cdn的文件[saberma] #383
+7. 禁止Search Engine访问cdn的文件[saberma] #383
 8. 顾客订单快递费用要显示[saberma] #382
 9. 标记过滤器可以获取tag链接[saberma] #375
 10. 商店模板变量增加types属性[saberma] #374
@@ -141,8 +141,8 @@
 ### 功能(10):
 
 1. 商店可以通过js获取商品图片地址[saberma] #367
-2. 博客模板变量增加文章总数属性[saberma] #365
-3. 博客模板变量支持相邻文章[saberma] #364
+2. Blog模板变量增加文章总数属性[saberma] #365
+3. Blog模板变量支持相邻文章[saberma] #364
 4. 模板分页变量limit值可以使用变量[saberma] #362
 5. 商品详情可以显示相邻商品链接[saberma] #361
 6. 商品图片的宽高不能强制相等[saberma] #360
@@ -166,7 +166,7 @@
 ### 功能(4):
 
 1. 顾客可以提交意见表单[saberma] #347
-2. 增加博客文章comments_enabled模板属性[saberma] #346
+2. 增加Blog文章comments_enabled模板属性[saberma] #346
 3. 增加模板过滤器camelize[saberma] #345
 4. 绑定顶级域名访问商店不使用https协议[saberma] #344
 

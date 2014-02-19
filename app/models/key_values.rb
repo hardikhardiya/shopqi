@@ -36,7 +36,7 @@ module KeyValues
       {id: 4 , name: '促销'        , code: 'marketing'         ,resource_type_id: 1},
       {id: 5 , name: '商品&集合'   , code: 'products'          ,resource_type_id: 2},
       {id: 6 , name: '外观'        , code: 'themes'            ,resource_type_id: 2},
-      {id: 7 , name: '博客&页面'   , code: 'pages'             ,resource_type_id: 2},
+      {id: 7 , name: 'Blog&页面'   , code: 'pages'             ,resource_type_id: 2},
       {id: 8 , name: '链接列表'    , code: 'link_lists'        ,resource_type_id: 2},
       {id: 9 , name: '应用'        , code: 'applications'      ,resource_type_id: 3},
       {id: 10, name: '设置'        , code: 'preferences'       ,resource_type_id: 3},
@@ -111,15 +111,15 @@ module KeyValues
 
     class SignupSource < KeyValues::Base # 注册来源
       self.data = [
-        {id: 1, name: '我不确定'    , code: 'not_sure'    },
-        {id: 2, name: '其他公司介绍', code: 'from_company'},
-        {id: 3, name: '朋友介绍'    , code: 'from_frient' },
-        {id: 4, name: '博客'        , code: 'blog'        },
-        {id: 5, name: '搜索引擎'    , code: 'search'      },
-        {id: 6, name: '网络广告'    , code: 'web_ad'      },
-        {id: 7, name: '杂志广告'    , code: 'magazine_ad' },
-        {id: 8, name: '书籍'        , code: 'book'        },
-        {id: 9, name: '其他'        , code: 'other'       },
+        {id: 1, name: 'I m not sure'    , code: 'not_sure'    },
+        {id: 2, name: 'Other companies introduced', code: 'from_company'},
+        {id: 3, name: 'Friends'    , code: 'from_frient' },
+        {id: 4, name: 'Blog'        , code: 'blog'        },
+        {id: 5, name: 'Search Engine'    , code: 'search'      },
+        {id: 6, name: 'Online Advertising'    , code: 'web_ad'      },
+        {id: 7, name: 'Magazine ads'    , code: 'magazine_ad' },
+        {id: 8, name: 'Books'        , code: 'book'        },
+        {id: 9, name: 'Other'        , code: 'other'       },
       ]
     end
 
@@ -355,7 +355,7 @@ module KeyValues
         {id: 3, name: '没有及时付款'     , code: 'not_pay'     },
         {id: 4, name: '欺诈性订单'       , code: 'fraud'       },
         {id: 5, name: '没有商品了'       , code: 'inventory'   },
-        {id: 6, name: '其他'             , code: 'other'       }
+        {id: 6, name: 'Other'             , code: 'other'       }
       ]
     end
 
@@ -387,13 +387,13 @@ module KeyValues
     #链接类型
     class Type < KeyValues::Base
       self.data = [
-        {id: 1, name: '博客'    , code: 'blog'      },
+        {id: 1, name: 'Blog'    , code: 'blog'      },
         {id: 2, name: '商店首页', code: 'frontpage' },
         {id: 3, name: '商品集合', code: 'collection'},
         {id: 4, name: '指定页面', code: 'page'      },
         {id: 5, name: '指定商品', code: 'product'   },
         {id: 6, name: '查询页面', code: 'search'    },
-        {id: 7, name: '其他网址', code: 'http'      }
+        {id: 7, name: 'Other网址', code: 'http'      }
       ]
     end
 

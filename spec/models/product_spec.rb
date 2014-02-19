@@ -113,7 +113,7 @@ describe Product do
 
       context '#name' do # 名称
 
-        context 'product has another variant' do # 有其他款式
+        context 'product has another variant' do # 有Other款式
 
           it 'should append variant title' do #
             variant = iphone4.variants.create option1: '16G', price: 4000.0
@@ -122,7 +122,7 @@ describe Product do
 
         end
 
-        context 'product has not another variant' do # 没有其他款式
+        context 'product has not another variant' do # 没有Other款式
 
           it 'should show product title only' do #
             variant = iphone4.variants.first

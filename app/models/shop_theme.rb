@@ -105,7 +105,7 @@ class ShopThemeSetting < ActiveRecord::Base
         end
         element.inner_html = builder.doc.at_css('div').inner_html
       end
-      doc.css("select.blog").each do |element| # 博客
+      doc.css("select.blog").each do |element| # Blog
         builder = Nokogiri::HTML::Builder.new do
           div {
             option(value: nil) { text '无' }
@@ -217,7 +217,7 @@ class ShopTheme < ActiveRecord::Base
         end
       end
     end
-    FileUtils.mkdir_p public_path # 主题文件只有附件对外公开，其他文件不能被外部访问
+    FileUtils.mkdir_p public_path # 主题文件只有附件对外公开，Other文件不能被外部访问
     public_asset_path = File.join(public_path, 'assets')
     FileUtils.rm_rf public_asset_path # fixed: ln_s发现目录存在时，会在目录下新增目录，导致循环
     FileUtils.ln_s File.realpath(File.join(path, 'assets')), public_asset_path

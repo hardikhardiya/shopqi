@@ -53,7 +53,7 @@ describe "Orders", js: true do
     #  click_on '结算'
     #  page.should have_content('顾客登录') # 跳转至登录页面
     #  click_on '注册账号'
-    #  fill_in 'customer[name]'                 , with: '马海波'
+    #  fill_in 'customer[name]'                 , with: 'Horse海波'
     #  fill_in 'customer[email]'                , with: 'mahb45@gmail.com'
     #  fill_in 'customer[password]'             , with: '666666'
     #  fill_in 'customer[password_confirmation]', with: '666666'
@@ -98,9 +98,9 @@ describe "Orders", js: true do
         find('#discount-detail').should have_content("您正使用优惠码 #{discount.code} 节省了 10 元。")
         find('#cost').should have_content("¥#{(iphone4_variant.price - discount.value).to_i}")
         fill_in 'order[email]', with: 'mahb45@gmail.com' #收货人
-        fill_in 'order[shipping_address_attributes][name]', with: '马海波'
+        fill_in 'order[shipping_address_attributes][name]', with: 'Horse海波'
         select '广东省', form: 'order[shipping_address_attributes][province]'
-        select '深圳市', form: 'order[shipping_address_attributes][city]'
+        select 'Shenzhen', form: 'order[shipping_address_attributes][city]'
         select '南山区', form: 'order[shipping_address_attributes][district]'
         fill_in 'order[shipping_address_attributes][address1]', with: '311'
         fill_in 'order[shipping_address_attributes][phone]', with: '13928458888'
@@ -136,9 +136,9 @@ describe "Orders", js: true do
           fill_in 'discount[code]', with: discount.code
           click_on '提交'
           fill_in 'order[email]', with: 'mahb45@gmail.com' #收货人
-          fill_in 'order[shipping_address_attributes][name]', with: '马海波'
+          fill_in 'order[shipping_address_attributes][name]', with: 'Horse海波'
           select '广东省', form: 'order[shipping_address_attributes][province]'
-          select '深圳市', form: 'order[shipping_address_attributes][city]'
+          select 'Shenzhen', form: 'order[shipping_address_attributes][city]'
           select '南山区', form: 'order[shipping_address_attributes][district]'
           fill_in 'order[shipping_address_attributes][address1]', with: '311'
           fill_in 'order[shipping_address_attributes][phone]', with: '13928458888'

@@ -28,9 +28,9 @@ describe "Shopqi::Registrations", js: true do
         fill_in 'shop[name]'       , with: '苹果专卖'
         fill_in 'domain[subdomain]', with: 'apple'
         click_on '跳过这一步'
-        fill_in '姓名'             , with: '马波'
+        fill_in '姓名'             , with: 'Horse波'
         select '广东省'            , from: 'shop[province]'
-        select '深圳市'            , from: 'shop[city]'
+        select 'Shenzhen'            , from: 'shop[city]'
         select '南山区'            , from: 'shop[district]'
         fill_in '地址'             , with: '311'
         fill_in '邮编'             , with: '517058'
@@ -99,7 +99,7 @@ describe "Shopqi::Registrations", js: true do
 
       it "should be skip" do
         click_on '跳过这一步' # 选中第一个主题
-        click_on '选择其他主题'
+        click_on '选择Other主题'
         sleep 3
         find('#themes-section').visible?.should be_true
         find('#current-theme').visible?.should be_false

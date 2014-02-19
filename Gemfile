@@ -40,9 +40,9 @@ gem 'message_block' #用于显示错误信息
 gem 'client_side_validations' #客户端校验
 #gem 'therubyracer', require: nil unless ENV['TRAVIS'] # 编译coffee-script # 安装编译过程太慢(大概需要4分钟)
 
-##### 其他 #####
+##### Other #####
 gem "activemerchant" # 支付
-gem "activemerchant_patch_for_china", git: "git://github.com/saberma/activemerchant_patch_for_china.git" # 支持多个支付帐户(待完成其他财付通等类型后再send pull request)
+gem "activemerchant_patch_for_china", git: "git://github.com/saberma/activemerchant_patch_for_china.git" # 支持多个支付帐户(待完成Other财付通等类型后再send pull request)
 gem "httparty"
 #gem "resque" # 后台任务
 gem "resque", "~> 1.21.0"
@@ -61,7 +61,7 @@ gem "jquery-rails"
 gem 'rubyzip' # 解压缩用户上传的主题zip文件
 gem 'gollum', git: 'git://github.com/saberma/gollum.git'  #用于wiki系统，1.3.1需要安装Pygments http://j.mp/uHMN1L，开发版本使用payments.rb，但有waring提示'did not have a valid gemspec'
 gem 'RedCloth'
-gem 'sitemap_generator' # 生成搜索引擎友好的sitemap # bundle exec rake sitemap:refresh:no_ping
+gem 'sitemap_generator' # 生成Search Engine友好的sitemap # bundle exec rake sitemap:refresh:no_ping
 gem 'exception_notification' # 发生异常时邮件通知
 
 group :development do

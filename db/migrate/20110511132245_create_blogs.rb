@@ -11,7 +11,7 @@ class CreateBlogs < ActiveRecord::Migration
     end
     create_table :articles do |t|
       t.integer :shop_id  , comment: '所属商店(冗余方便全文检索)'
-      t.integer :blog_id  , comment: '所属博客'
+      t.integer :blog_id  , comment: '所属Blog'
       t.string :title     , comment: '标题'
       t.text :body_html   , comment: '内容'
       t.boolean :published, comment: '是否可见'                  , default: true

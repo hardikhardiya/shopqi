@@ -39,7 +39,7 @@ describe "Shop::Customers", js: true do
       within '#customer_detail' do
         has_content?('李卫辉').should be_true
         has_content?('广东省').should be_true
-        has_content?('深圳市').should be_true
+        has_content?('Shenzhen').should be_true
         has_content?('南山区').should be_true
         has_content?('查看地址簿(1)').should be_true
       end
@@ -85,7 +85,7 @@ describe "Shop::Customers", js: true do
       within '#add_address' do
         fill_in 'address[name]', with: '李卫辉'
         select '广东省', form: 'address[province]'
-        select '深圳市', form: 'address[city]'
+        select 'Shenzhen', form: 'address[city]'
         select '南山区', form: 'address[district]'
         fill_in 'address[address1]', with: '深港产学研基地'
         fill_in 'address[phone]', with: '13751042627'
@@ -98,7 +98,7 @@ describe "Shop::Customers", js: true do
 
       within '#address_tables' do
         page.should have_content('收货人: 李卫辉')
-        page.should have_content('详细地址: 广东省深圳市南山区深港产学研基地')
+        page.should have_content('详细地址: 广东省Shenzhen南山区深港产学研基地')
         page.should have_content('邮政编码: 518000')
         page.should have_content('公司: shopqi')
       end

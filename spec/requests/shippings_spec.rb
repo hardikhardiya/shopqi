@@ -25,13 +25,13 @@ describe "Shippings", js: true do
         click_on '新增目的地'
         within '#new-region' do
           select '广东省', form: 'province'
-          select '深圳市', form: 'city'
+          select 'Shenzhen', form: 'city'
           select '南山区', form: 'district'
           click_on '保存'
         end
         has_content?('新增成功!').should be_true
         within '#custom-shipping' do
-          find(:xpath, './table[2]//th[1]').text.should eql '广东省深圳市南山区'
+          find(:xpath, './table[2]//th[1]').text.should eql '广东省Shenzhen南山区'
         end
       end
 

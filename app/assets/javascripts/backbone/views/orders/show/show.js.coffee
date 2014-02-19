@@ -1,5 +1,5 @@
 App.Views.Order.Show.Show = Backbone.View.extend
-  el: '#main' #注意:其他子视图不能再绑定#main，否则events会被覆盖而不生效
+  el: '#main' #注意:Other子视图不能再绑定#main，否则events会被覆盖而不生效
 
   events:
     'click #note': 'showNote'

@@ -17,7 +17,7 @@ describe User do
         phone: "13928458888",
         plan: "professional"
       },
-      name: "马海波",
+      name: "Horse海波",
       email: "mahb45@gmail.com",
       password: "666666",
       password_confirmation: "666666",
@@ -55,7 +55,7 @@ describe User do
 
       let(:attrs) do # 不包含商店属性，与现有用户重复
         {
-          name: "马海波",
+          name: "Horse海波",
           email: "mahb45@gmail.com",
           password: "666666",
           password_confirmation: "666666",

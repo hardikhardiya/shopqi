@@ -128,14 +128,14 @@ describe "Orders", js: true do
 
         within '#ship-addr' do
           has_content?('13928452888').should be_true
-          has_content?('马海波').should be_true
+          has_content?('Horse海波').should be_true
           has_content?('广东省').should be_true
-          has_content?('深圳市').should be_true
+          has_content?('Shenzhen').should be_true
           has_content?('南山区').should be_true
         end
       end
 
-      it "should list other orders" do # 此顾客的其他待处理的订单
+      it "should list other orders" do # 此顾客的Other待处理的订单
         o = Factory.build :order, shop: shop, shipping_rate: '普通快递-10.0', payment_id: payment_alipay.id
         o.line_items.build [ {product_variant: iphone4_variant, price: 10, quantity: 2}, ]
         o.save
