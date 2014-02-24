@@ -1,15 +1,15 @@
 cn:
   active_admin:
-    dashboard: '控制面板'
+    dashboard: 'Control Panel'
     dashboard_welcome:
       welcome: "欢迎使用Active Admin. 这是默认的控制面板页."
       call_to_action: "若要添加新的面板内容, 请修改 'app/admin/dashboards.rb'"
-    view: "查看"
-    edit: "编辑"
-    delete: "删除"
-    delete_confirmation: "确定删除?"
-    new_model: "新建%{model}"
-    edit_model: "编辑%{model}"
+    view: "View"
+    edit: "Editor"
+    delete: "Delete"
+    delete_confirmation: "OK to delete?"
+    new_model: "New%{model}"
+    edit_model: "New%{model}"
     delete_model: "删除%{model}"
     details: "%{model}详情"
     cancel: "取消"
@@ -19,16 +19,16 @@ cn:
     download: "下载:"
     has_many_new: "新建一个%{model}"
     has_many_delete: "删除"
-    filter: "过滤"
-    clear_filters: "清除条件"
-    search_field: "查找%{field}"
-    equal_to: "等于"
-    greater_than: "大于"
-    less_than: "小于"
+    filter: "Filter"
+    clear_filters: "Clear conditions"
+    search_field: "Find%{field}"
+    equal_to: "Equal"
+    greater_than: "Greater than"
+    less_than: "Less than"
     main_content: "请执行 %{model}#main_content 来显示内容."
-    logout: "退出"
+    logout: "Quit"
     sidebars:
-      filters: "所有条件"
+      filters: "All conditions"
     pagination:
       empty: "暂时没有%{model}"
       one: "显示 <b>1</b> %{model}"

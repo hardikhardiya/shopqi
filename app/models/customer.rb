@@ -138,6 +138,8 @@ class CustomerAddress < ActiveRecord::Base
 
   def detail_address
     "#{province_name}#{city_name}#{district_name}#{address1}".gsub(/市County/,'市').gsub(/City area/,'')
+
+    
   end
 
 end
@@ -158,9 +160,4 @@ class CustomerTag < ActiveRecord::Base
     super(only: :name)['customer_tag']
   end
 end
-
-
-
-
-
 

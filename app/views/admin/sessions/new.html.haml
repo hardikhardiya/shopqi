@@ -19,9 +19,9 @@
             =f.label :password, id: :password_label
             =f.password_field :password, id: "password", class: :formnote, size: 16
             #forgot-password
-              =link_to "忘记密码?", new_password_path(resource_name)
+              =link_to "Forgot your password?", new_password_path(resource_name)
           .ppb.c
             =f.check_box :remember_me
             =f.label :remember_me, class: :normal
         .actions
-          %input.btn(name="commit" type="submit" value="登录")
+          %input.btn(name="commit" type="submit" value="Login")

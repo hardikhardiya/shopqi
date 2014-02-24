@@ -8,7 +8,7 @@ ActiveAdmin::Dashboards.build do
   # == Simple Dashboard Section
   # Here is an example of a simple dashboard section
   #
-  section "最近的商店" do
+  section "The nearest shops" do
     table_for Shop.order("created_at desc").limit(10),i18n: Shop  do
       column :name do |shop|
         link_to shop.name, active_admin_shop_path(shop)
@@ -19,8 +19,8 @@ ActiveAdmin::Dashboards.build do
       column :theme
       column :created_at
     end
-    strong { link_to '查看所有商店', active_admin_shops_path }
-    strong { link_to '查看系统状态', state_active_admin_shops_path }
+    strong { link_to 'See all shops', active_admin_shops_path }
+    strong { link_to 'View system status', state_active_admin_shops_path }
   end
 
   # == Render Partial Section

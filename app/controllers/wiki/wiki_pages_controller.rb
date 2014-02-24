@@ -10,7 +10,7 @@ class Wiki::WikiPagesController < Wiki::AppController
     if @page
       render text: @page.formatted_data, layout: true
     else
-      render text: "请创建<a href='/home'>wiki首页</a>", layout: true
+      render text: "Create<a href='/home'>wiki Home</a>", layout: true
     end
   end
 
@@ -157,7 +157,7 @@ class Wiki::WikiPagesController < Wiki::AppController
         if admin_user_signed_in?
           render action: :new
         else
-          render text: '没有找到对应的页面',layout: true
+          render text: 'Did not find the corresponding page',layout: true
         end
       end
     end

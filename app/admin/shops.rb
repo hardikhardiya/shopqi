@@ -9,10 +9,10 @@ ActiveAdmin.register Shop do
      column :phone
      column :guided
      column :theme
-     column "商店地址" do |shop|
-       link_to "访问","#{shop.primary_domain.url}#{request.port_string}",target:"_blank"
+     column "Store Address" do |shop|
+       link_to "Visit","#{shop.primary_domain.url}#{request.port_string}",target:"_blank"
      end
-     column "商店恢复" do |shop|
+     column "Shops recovery" do |shop|
        unless shop.access_enabled
          link_to "恢复商店",restore_active_admin_shop_path(shop),method: :put
        end

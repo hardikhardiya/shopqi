@@ -1,11 +1,11 @@
-%h2#title 商品管理
+%h2#title Commodity Management
 #action-links
   %ul
     %li#add-prod
-      =link_to "新增商品",new_product_path
+      =link_to "New Product",new_product_path
     -#
       %li.csv
-        %a(href="#" onclick="$('export-products').toggle(); return false;") 导出商品
+        %a(href="#" onclick="$('export-products').toggle(); return false;") Export of goods
       %li.csv
         %a(href="/admin/product_imports") 导入商品
 =render "shared/noscript"
@@ -19,11 +19,11 @@
   %a.btn(href="/admin/products.csv") 导出当前显示的商品
   %a.btn.sl(href="/admin/product_exports.csv") 导出所有商品
 #table-filters.box2.sst
-  显示
-  %a#vendor-filter-link(href="#")=search_label :vendor, '所有厂商'
-  和
-  %a#type-filter-link(href="#")=search_label :product_type, "所有类型"
-  的商品
+  Show
+  %a#vendor-filter-link(href="#")=search_label :vendor, 'All manufacturers'
+  And
+  %a#type-filter-link(href="#")=search_label :product_type, "All types"
+  Goods
   #vendor-status-select.filter-select
     %ul.dropdown.hide(style='left: -153px')
       %li

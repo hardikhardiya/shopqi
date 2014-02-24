@@ -196,7 +196,8 @@ $(document).ready ->
     .appendTo(ul)
 
   #外观、设置
-  NavigationDropdown 'apps-link': '应用', 'theme-link': '外观', 'preferences-link': '设置'
+
+  NavigationDropdown 'apps-link': 'Application', 'theme-link': 'Exterior', 'preferences-link': 'Set up'
 
   #下拉框
   UpdateableSelectBox $('#product-type-select'), '新增类型'

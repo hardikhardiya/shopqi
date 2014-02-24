@@ -2,7 +2,7 @@
 module Admin::ShippingHelper
   def price_max_order_subtotal_helper(price_based_shipping_rate)
     if price_based_shipping_rate.max_order_subtotal.nil?
-      "最少"
+      "Least"
     else
       " - ¥#{price_based_shipping_rate.max_order_subtotal}"
     end

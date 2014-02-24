@@ -1,16 +1,18 @@
 %h2#title ShopQi API
 #action-links
   %ul
-%h3 私有应用
+
+%h3 Private Applications
 %p
-  私有应用是通过使用ShopQi API 来与商店进行交互的一种方式。
+  Using proprietary applications ShopQi API is a way to interact with the store.
   %br/
-  通过使用它们建立自动任务，能更方便使用商店
+  By using them to establish automated tasks can be more convenient to use the store
   %br/
   -#%a{:href => "http://wiki.shopqi.com/Private_apps", :target => "_blank"} 查看私有应用帮助文档
 %br/
 %p#new-api
-  %a.btn 生成新的应用
+
+  %a.btn Generate a new application
 %script(id="show-api-client-item" type="text/html")
   %h3.with-settings
     {{{ title }}}
@@ -20,13 +22,15 @@
       %td.l api key
       %td {{{ api_key }}}
     %tr
-      %td.l 密码
+
+      %td.l Password
       %td {{{ password }}}
     %tr
-      %td.l 共享密钥
+      %td.l Shared key
       %td {{{ shared_secret }}}
     %tr
-      %td.l URL格式
+      %td.l URL format
+
       %td https://apikey:password@hostname/api/resource.xml
 :javascript
   App.api_clients = new App.Collections.ApiClients();

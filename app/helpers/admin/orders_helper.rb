@@ -8,7 +8,8 @@ module Admin::OrdersHelper
 
   def orders_menu_label
     size = orders_size
-    size > 0 ? "订单 (#{size})" : "订单"
+
+    size > 0 ? "Orders (#{size})" : "Orders"
   end
 
   def orders_size

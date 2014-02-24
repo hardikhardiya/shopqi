@@ -4,9 +4,9 @@
 cn:
   activerecord:
     models:
-      theme: 主题
+      theme: Theme
       user: 用户
-      shop: 商店
+      shop: Shop
       product: 商品
       custom_collection: 集合
       blog: Blog
@@ -15,18 +15,18 @@ cn:
       order: 订单
       subscribe: 订阅信息
       payment: 支付信息
-      shop_domain: 商店域名
+      shop_domain: Shops domain
     attributes:
       user:
-        name: 姓名
-        phone: 电话
-        avatar_image: 头像信息
-        bio: 个人介绍
-        email: 邮箱
+        name: Full name
+        phone: Phone
+        avatar_image: Picture information
+        bio: Introduction
+        email: Mailbox
         current_password: 当前密码
-        password: 密码
-        password_confirmation: 确认密码
-        remember_me: 记住我
+        password: Password
+        password_confirmation: Confirm password
+        remember_me: Remember me
         shop:
           permanent_domain: 二级域名
           name: 网店名
@@ -74,49 +74,49 @@ cn:
         name: 选项名称
       page:
         title: 标题
-        description: 描述
+        description: Description
       theme:
-        name: 名称
-        handle: 名称handle
-        style: 风格
-        style_handle: 风格handle
-        role: 角色
-        price: 价格
-        color: 颜色
-        desc: 描述
-        shop: demo网店的子域名
-        site: 作者官网
-        author: 作者
-        email: 作者Email
-        published: 是否启用
-        position: 排序序号
-        file: 主题压缩文件
-        main: 主题列表截图
-        collection: 主题详情集合截图
-        product: 主题详情商品截图
+        name: Name
+        handle: Name handle
+        style: Style
+        style_handle: Style handle
+        role: Role
+        price: Price
+        color: Color
+        desc: Description
+        shop: demoShop subdomain
+        site: On the official website
+        author: Author
+        email: AuthorEmail
+        published: Whether to enable
+        position: Sort numbers
+        file: Theme compressed file
+        main: Topic List Screenshot
+        collection: Details of the collection theme screenshot
+        product: Theme Details Product Screenshot
       shop:
         permanent_domain: 二级域名
-        name: 网店名
+        name: Shop Name
         plan: 类型
-        zip_code: 邮政编码
+        zip_code: Zip code
         keywords: 关键字
-        phone: 电话
-        theme: 主题
-        deadline: 到期时间
+        phone: Phone
+        theme: Theme
+        deadline: Expiry Date
         password: 密码
-        email: 邮箱
-        address: 详细地址
-        order_number_format: 订单号格式
-        province: 省份
-        city: 城市
-        district: 地区
-        password: 密码
-        password_enabled: 商店密码启用
-        password_message: 提示信息
-        customer_accounts: 顾客付款设置
-        guided: 是否完成指南任务
-        created_at: 创建时间
-        updated_at: 更新时间
+        email: Mailbox
+        address: Address
+        order_number_format: Order Number format
+        province: Province
+        city: City
+        district: Area
+        password: Password
+        password_enabled: Store password enabled
+        password_message: Message
+        customer_accounts: Customer payment settings
+        guided: The task is complete guide
+        created_at: Created
+        updated_at: Update
       subscribe:
         address: 邮件地址
       blog:
@@ -148,7 +148,7 @@ cn:
         name: 姓名
         company: 公司
         country_code: 国家
-        province: 省份
+        province: Province
         city: 城市
         address1: 地址
         address2: 地址 续
@@ -380,7 +380,7 @@ cn:
   #页面中的文字
   web:
     save: 保存
-    cancel: 取消
+    cancel: Cancel
     back: 返回
     list: 列表
     edit: 编辑
@@ -396,7 +396,7 @@ cn:
     settings: 设置
     logout: 退出
     optional: (非必填)
-    or: 或者
+    or: Or
     published: 发布
     hidden: 隐藏
-    upgrade: 升级
+    upgrade: Upgrade

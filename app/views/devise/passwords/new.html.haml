@@ -3,13 +3,15 @@
     .ssb.c=image_tag 'logos/shopqi-logo-new.jpg'
     =form_for(resource, :as => resource_name, url: user_password_path(resource)) do |f|
       .lform.c.clearfix.ppb
-        %h3 忘记密码？ 不能登录？
+        %h3 Forgot your password? Can not log in?
         %p.ppb
-          在下面输入
-          %strong 邮箱地址
-          我们Horse上会发送邮件，告诉您如何找回密码!
+
+          Enter below
+          %strong E-mail address
+          We will immediately send a message，Tells you how to recover your password!
+
         =f.text_field :email, size: "30", id: "login", class: :fn, style: "display: inline"
       .actions
-        =f.submit "发送重置密码操作链接", class: "btn"
-        或者
-        %a(href="#" onclick="history.back();return false;") 取消
+        =f.submit "Send a link to reset your password operation", class: "btn"
+        Or
+        %a(href="#" onclick="history.back();return false;") Cancel

@@ -21,7 +21,7 @@ FactoryGirl.define do
     handle 'woodland'
     role 'main'
     color 'grey'
-    desc '乔木林地 是ShopQi官方模板之一，除提供具体模板功能外还提供丰富的自定义配置。'
+    desc 'Woodland 是ShopQi官方模板之一，除提供具体模板功能外还提供丰富的自定义配置。'
     shop 'woodland'
     site 'http://www.shopqi.com'
     author 'ShopQi'

@@ -1,7 +1,7 @@
 #smart-collections.pgroup.sst
-  %h3 智能集合
+  %h3 Intelligence collection
   -if smart_collections.empty?
-    %p.note(style="padding-left:10px") 您还没有增加任何智能集合.
+    %p.note(style="padding-left:10px") You have not added any smart collection..
   %table.collection-list
     %tbody
       -smart_collections.in_groups_of(3) do |group|

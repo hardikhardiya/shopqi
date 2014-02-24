@@ -2,13 +2,13 @@
   %td
     %a(href="#users/{{id}}" class="set_permissions" ) {{ name }}
     {{#if is_self}}
-    %a(href="/admin/users/{{ id }}/edit") 修改
+    %a(href="/admin/users/{{ id }}/edit") Modification
     {{/if }}
   %td {{ email }}
   %td
     #edit_regular_user_status
       {{#unless radio_checked }}
-      受限制的
+      Restricted
       {{/unless }}
   %td.r
     {{#if can_delete}}

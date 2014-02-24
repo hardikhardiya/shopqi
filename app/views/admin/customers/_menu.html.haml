@@ -1,12 +1,12 @@
-%h2#title 顾客管理
+%h2#title Customer Management
 #action-links
   %ul
-    %li#customer=link_to "新增顾客信息", new_customer_path
+    %li#customer=link_to "New Customer Information", new_customer_path
     -#
       %li.csv
-        %a#show_export_customers(href="#") 导出顾客信息
+        %a#show_export_customers(href="#") Export Customer Information
       %li.csv
-        %a(href="/admin/customer_imports") 导入顾客信息
+        %a(href="/admin/customer_imports") Importing Customer Information
 =render "shared/noscript"
 =render "shared/upgrade_ie"
 -#=render :export

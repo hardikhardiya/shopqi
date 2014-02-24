@@ -24,74 +24,74 @@
       url: url,
       cache: false,
       success: function(){
-        $('<span/>').addClass('status ok').text('正常').prependTo($(target))
+        $('<span/>').addClass('status ok').text('Normal').prependTo($(target))
       },
       error: function(){
-        $('<span/>').addClass('status error').text('出错').prependTo($(target))
+        $('<span/>').addClass('status error').text('Error').prependTo($(target))
       }
     });
   };
 
-%p 此页面统一放置各个常用功能点在生产环境下容易出错的功能，方便检查
+%p This page features all the usual point of unity placed in a production environment and error-prone function，Facilitate inspection
 %table
   %tr
-    %td.title 分类
-    %td.state 状态
-    %td.desc 出错时的相应描述
-    %td.view 操作
+    %td.title Classification
+    %td.state Status
+    %td.desc An error occurred while the corresponding description
+    %td.view Operating
 
-%h2 服务器
+%h2 Server
 %table
   %tr
-    %td.title 是否能连接到Redis服务器
+    %td.title Can connect to Redis server
     %td#server_redis.state
       -if @server_redis
-        %span.status.ok 正常
+        %span.status.ok Normal
       -else
-        %span.status.error 出错
-    %td.desc Redis可能未启动
+        %span.status.error Error
+    %td.desc Redis may not start
     %td.view
   %tr
-    %td.title 是否能连接到Sunspot服务器
+    %td.title Can connect to Sunspot server
     %td#server_sunspot.state
       -if @server_sunspot
-        %span.status.ok 正常
+        %span.status.ok Normal
       -else
-        %span.status.error 出错
+        %span.status.error Error
     %td.desc Sunspot可能未启动
-    %td.view=link_to '查看', "#{Sunspot.config.solr.url}/admin", target: :_blank
+    %td.view=link_to 'View', "#{Sunspot.config.solr.url}/admin", target: :_blank
   %tr
-    %td.title Solr服务器是否支持utf-8编码(Get)
+    %td.title Solr server supports utf-8 encoding(Get)
     %td#server_solr.state
       -if @server_solr_get
-        %span.status.ok 正常
+        %span.status.ok Normal
       -else
-        %span.status.error 出错
-    %td.desc Solr容器不支持utf-8编码会导致无法查询中文关键字；下载solr压缩包，使用example/exampledocs/test_utf8.sh测试；推荐使用jetty7作为solr服务器，tomcat5,6,7都存在编码问题
-    %td.view=link_to '下载', "http://www.apache.org/dyn/closer.cgi/lucene/solr/", target: :_blank
+        %span.status.error Error
+    %td.desc Solr container does not support utf-8 encoding will lead to inquiries Chinese keyword；Download compressed package solr，使用example/exampledocs/test_utf8.sh test；Solr server as recommended jetty7，tomcat5,6,7 coding problems exist
+    %td.view=link_to 'Download', "http://www.apache.org/dyn/closer.cgi/lucene/solr/", target: :_blank
   %tr
-    %td.title Solr服务器是否支持utf-8编码(Post)
+    %td.title Solr server supports utf-8 encoding(Post)
     %td#server_solr.state
       -if @server_solr_post
-        %span.status.ok 正常
+        %span.status.ok Normal
       -else
-        %span.status.error 出错
-    %td.desc 同上(Get方式)
+        %span.status.error Error
+    %td.desc Ditto (Get mode)
     %td.view
 
 %h2 Libxml2
 %table
   %tr
-    %td.title 版本是否正确
+    %td.title The correct version
     %td.state
       -if @libxml2
-        %span.status.ok 正常
+        %span.status.ok Normal
       -else
-        %span.status.error 出错
+        %span.status.error Error
     %td.desc
-      2.6.26存在bug无法解析html(http://j.mp/v6CXbf)，导致商店后台外观设置未能配置项，需要升级libxml2版本
+      2.6.26Can not resolve a bughtml(http://j.mp/v6CXbf)，Store the background leading to the appearance settings are not configured items，Need to upgrade the version of libxml2
       %br/
-      可通过命令查看版本 bundle exec nokogiri -v 或者  rpm -q libxml2
+      By command view version bundle exec nokogiri -v Or  rpm -q libxml2
     %td.view
 
 %h2 Git
@@ -100,11 +100,11 @@
     %td.title commit提交
     %td.state
       -if @git
-        %span.status.ok 正常
+        %span.status.ok Normal
       -else
-        %span.status.error 出错
+        %span.status.error Error
     %td.desc
-      无法提交，导致商店后台模板编辑器未能显示文件，要运行以下命令
+      Failed to submit，Cause Shops background template editor fails to display the file，To run the following command
       %br/
       git config --global user.email "you@example.com"
       %br/
@@ -112,34 +112,34 @@
     %td.view
 
 
-%h2 主题商店
+%h2 Theme Store
 %table
   %tr
-    %td.title 截图
+    %td.title Screenshot
     %td#theme_screenshot.state
       -if @theme
         :javascript
           check404('#theme_screenshot', '#{image_path("/s/theme/screenshots/#{@theme.id}/main/medium_original.jpg")}');
       -else
-        %span 没有主题，请先上传主题记录
-    %td.desc nginx没有解析静态文件 /s/theme/screenshots/1/main/medium_original.jpg
-    %td.view=link_to '查看', theme_store_url_with_port, target: :_blank
+        %span No subject，Please upload themes record
+    %td.desc nginx does not parse static files /s/theme/screenshots/1/main/medium_original.jpg
+    %td.view=link_to 'View', theme_store_url_with_port, target: :_blank
 
-%h2 商店
+%h2 Shop
 %table
   %tr
-    %td.title 是否能加载全局js工具
+    %td.title Whether it can be loaded globally js tool
     %td#shop_global_js.state
       :javascript
         check404('#shop_global_js', '#{@shop_global_js}');
-    %td.desc nginx没有解析静态文件 /s/global/jquery/1.5.2/jquery.js
+    %td.desc nginx does not parse static files /s/global/jquery/1.5.2/jquery.js
     %td.view
   %tr
-    %td.title 是否能加载全局商店专用js
+    %td.title Whether the global store dedicated load js
     %td#shop_shopqi_js.state
       :javascript
         check404('#shop_shopqi_js', '#{@shop_shopqi_js}');
-    %td.desc nginx没有解析静态文件 /s/shopqi/option_selection.js
+    %td.desc nginx does not parse static files /s/shopqi/option_selection.js
     %td.view
   -if @shop
     %tr
@@ -167,8 +167,8 @@
     -else
       %tr
         %td.status.warn(colspan=3)
-          商店的商品没有上传图片
+          Store merchandise not upload pictures
           =link_to "访问", "#{@shop.primary_domain.url}#{request.port_string}", target: :_blank
   -else
     %tr
-      %td.status.warn(colspan=4) 还没有商店，注册商店后才能检查商店的css,js附件是否正常加载
+      %td.status.warn(colspan=4) Do not store，Css can check the store after registration Shops,js accessories are properly loaded

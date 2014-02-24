@@ -1,8 +1,8 @@
-%h2#title 商店导航
+%h2#title Store Navigation
 #action-links
   %ul
     %li#new-menu
-      %a(href="#") 新增链接列表
+      %a(href="#") Add a link list
 =render "shared/noscript"
 =render "shared/upgrade_ie"
 #add-menu.group(style="display:none")
@@ -17,13 +17,12 @@
       或者
       %a.cancel(href="#") 取消
 #link-lists
-  %h3.st.sb 链接列表
+  %h3.st.sb Link List
   %p.note.ssb
-    链接列表是链接的集合，顾客通过点击这些链接来浏览商店的各个页面；
+    Link list is a collection of links，Customers who click on these links to navigate through the various pages Store；
     %br/
-    当您添加一个新的链接列表，需要在外观主题中包含它才能显示出来；要让这个链接列表显示在商店页面，请在
-    %a(href="/admin/themes/current") 模板编辑器
-    中修改模板.
+    When you add a new link list，Need to include it in the appearance of the subject to show up；To make this list of links displayed on the store page，Please
+    %a(href="/admin/themes/current") Template Editor Modify the template.
   .section
     %ul#menus.nobull.st
 
@@ -33,15 +32,15 @@
     .clearfix
       %h4.fl.sr.sb(title="固定链接: {{{handle}}}") {{{title}}}
       %span.fl(style="position: relative; font-size: 11px; ")
-        %a.editlist-action(href="#") 修改链接列表
+        %a.editlist-action(href="#") Modify the link list
       {{#unless system_default}}
       %span.delete-linklist
         %a.destroy(href="#")=image_tag 'admin/icons/trash.gif'
       {{/unless}}
-      %span.note.lighter.fr {{#if system_default}}这是默认链接列表，不能删除.{{/if}}
+      %span.note.lighter.fr {{#if system_default}}Footer...，This is the default list of links.{{/if}}
     .faux-table-header
-      %span 链接名称
-      %span 链接路径
+      %span Link Name
+      %span Link path
     %ul.links
   / begin: add new Link
   .add_form_link_container.group-actions.unattached

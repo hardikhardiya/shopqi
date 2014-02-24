@@ -1,7 +1,7 @@
-%h2#title 模板编辑器
+%h2#title Template Editor
 #action-links
   %ul
-    %li.settings= link_to "主题设置", settings_theme_path(shop.theme)
+    %li.settings= link_to "Theme Settings", settings_theme_path(shop.theme)
 =render "shared/noscript"
 =render "shared/upgrade_ie"
 -#
@@ -10,64 +10,68 @@
       .box2
         .fl.st(style="margin-right: 15px")
           %a(href="#")=image_tag 'admin/icons/arrow-up-large.gif'
-        %h3 导入
-        %p.note 使用您自有的主题或者自定义一个已有的主题.
-        %a(href="#") 上传一个主题
+
+        %h3 Import
+        %p.note Use your own theme or customize an existing theme.
+        %a(href="#") Upload a theme
         #upload-theme(style="display:none;")
           %p.sst
-            主题上传后将应用至您的商店。如果您之前有修改过模板文件，则它们
+            Theme upload will be applied to your store. If you have previously modified template files, they
             = succeed "." do
-              %strong 将被覆盖
+              %strong Will be overwritten
           %form(action="/admin/themes/upload" enctype="multipart/form-data" method="post")
             %dl
               %dd
                 %input(name="theme[upload]" size="25" type="file" value="")
             .group-actions
-              %input#commit.btn(name="commit" onclick="return confirm('您确定要覆盖当前的主题和之前所做的修改?');" type="submit" value="上传 &amp; 应用 主题")/
-              或者
-              %a(href="#") 取消
+              %input#commit.btn(name="commit" onclick="return confirm('Are you sure you want to overwrite the current themes and modifications made ​​before?');" type="submit" value="Upload &amp; Apply Theme")/
+              Or
+              %a(href="#") Cancel
     .col-6.last
       .box2
         .fl.st(style="margin-right: 15px")
           %a(href="/admin/themes/current.zip")=image_tag 'admin/icons/arrow-down-large.gif'
-        %h3 导出
-        %p.note 导出您当前的主题为一个zip文件，用于离线编辑.
-        %a(href="/admin/themes/current.zip") 下载您的主题
+
+        %h3 Export
+        %p.note Export your current theme is a zip file for offline editing.
+        %a(href="/admin/themes/current.zip") Download your theme
 -if shop.theme == theme
   #theme-edit-announcement.announcement.box2.c
-    %p 您对主题所做的修改将直接生效. 商店访问者将立即看到修改后的内容.
+    %p Changes you make will directly take effect theme. Shops visitors will immediately see the contents of the modified.
+
 #theme-editor.container
   #theme-editor-sidebar.col-3
     #theme-editor-sidebar-top
       .section.cl
-        %h3.section-header 布局
+
+        %h3.section-header Layout
         .section-content
           %ul#theme-layout.nobull.clearfix
         #new_layout_reveal_link.new-asset-link.note
-          %a(href="#") 新增布局
+          %a(href="#") New Layout
         #new-layout.cl.section-new(style="display:none")
           %p
-            以
+            With
             %select#new-layout-selectbox.st(name="asset[basename_without_ext]")
-            为蓝本
+            Modeled
             %br/
-            %strong 新增一个布局
+            %strong Add a layout
             %span#new-layout-called
-              并命名为
+              And named
               %input#new_layout_basename_without_ext.st(name="asset[basename_without_ext]" type="text")
-          %input#new_layout_btn.sst(type="button" value="新增布局")
-          或者
-          %a(href="#") 取消
+          %input#new_layout_btn.sst(type="button" value="New Layout")
+          Or
+          %a(href="#") Cancel
       .section.cl
-        %h3.section-header 模板
+        %h3.section-header Template
         .section-content
           %ul#theme-templates.nobull.clearfix
         #new_template_reveal_link.new-asset-link.note
-          %a(href="#") 新增模板
+          %a(href="#") New Templates
         #new-template.cl.section-new(style="display:none")
           %p
-            %strong 新增一个模板
-            用于
+            %strong Add a template
+            For
             %select#new-template-selectbox.st(name="asset[basename_without_ext]")
               %option(value="customers/account") customers/account
               %option(value="customers/addresses") customers/addresses
@@ -75,41 +79,43 @@
               %option(value="customers/order") customers/order
               %option(value="customers/password") customers/password
             %span#new-template-called
-          %input#new_template_btn.sst(type="button" value="新增模板")
-          或者
-          %a(href="#") 取消
+
+          %input#new_template_btn.sst(type="button" value="New Templates")
+          Or
+          %a(href="#") Cancel 
       .section.cl
-        %h3.section-header 片段
+        %h3.section-header Fragment
         .section-content
           %ul#theme-snippets.nobull.clearfix
         #new_snippet_reveal_link.new-asset-link.note
-          %a(href="#") 新增片段
+          %a(href="#") New clips
         #new-snippet.cl.section-new(style="display:none")
           %p
-            %strong 新增片段
+            %strong New clips
             命名为
             %input#new_snippet_basename_without_ext.st(name="asset[basename_without_ext]" type="text")
-          %input#new_snippet_btn.sst(type="button" value="新增片段")
+          %input#new_snippet_btn.sst(type="button" value="New clips")
           或者
-          %a(href="#") 取消
+          %a(href="#") Cancel 
       .section.cl
-        %h3.section-header 附件
+        %h3.section-header Attachment
         .section-content
           %ul#theme-assets.nobull.clearfix
         #new_asset_reveal_link.new-asset-link.note
-          %a(href="#") 新增附件
+          %a(href="#") Add Attachment
         #new-asset.cl.section-new(style="display:none")
-          %p 上传一个新的主题附件
+          %p Upload a new theme accessories
           #file-uploader
           -#%iframe#iframe(frameborder="0" src="/admin/themes/id/assets/new")
-          %a(href="#") 取消
+          %a(href="#") Cancel 
     .section.cl
-      %h3.section-header 设置
+      %h3.section-header Set up
       %div(class="section-content")
         .section-info
-          修改
+          Modification
           %code settings.html
-          的内容将显示在主题配置表单中.
+          The content will be displayed in the theme configuration form.
+
         %ul#theme-config.nobull.clearfix
   .col-9.last
     #current-asset
@@ -118,32 +124,36 @@
           %li#status-message
           %li#status-errorlist(style="font-weight: bold")
         #asset-buttons(style="display:none")
-          %input#save-button.btn(type="button" value="保存")
-          %input#open-button.btn.sr(type="button" value="在新的窗口打开")
-        %h3#asset-title 没有选择文件
+
+          %input#save-button.btn(type="button" value="Save")
+          %input#open-button.btn.sr(type="button" value="Open in a new window")
+        %h3#asset-title Do not select the file
+
         %span#asset-info(style="display: none")
         %ul#asset-links.nobull.clearfix(style="visibility:hidden")
         %p#asset-hint.hint.sst.ssb
           %span#asset-hint-noselect
             %span(style="font-size: 20px; color: #ccc; position: relative; top: 3px; ") &larr;
-            在左边选择一个文件开始修改它
+
+            Select a file on the left to start modifying it
           %span#asset-hint-liquid.hide
-            请参考
-            %a(href="#{wiki_url_with_port}/VariableReference" target="wiki" title="Open Wiki in a new window") 变量说明
-            学习如何在您的模板中使用动态信息.
+            Please refer to the
+            %a(href="#{wiki_url_with_port}/VariableReference" target="wiki" title="Open Wiki in a new window") Variable Description
+            Learn how to use the dynamic information in your template.
         %div(style="display:none")
           %span#asset-hint-config
-            如何使用这些文件，请参考我们的
-            %a(href="#{wiki_url_with_port}/Theme%20Settings" target="wiki" title="在新的窗口打开帮助文档") 主题配置帮助页面.
+            How to use these files, please refer to our
+            %a(href="#{wiki_url_with_port}/Theme%20Settings" target="wiki" title="Open help document in a new window") Theme Configuration help page.
           %span#asset-hint-liquid-settings
-            针对此Liquid文件有效的变量可以查看
+            Liquid document valid for this variable can be viewed
             = succeed "." do
-              %a(href="#{wiki_url_with_port}/Theme%20Settings%23Using%20the%20settings%20object%20in%20Liquid" target="wiki" title="Open Wiki in a new window") 设置对象
-            您可能会使用任何Liquid
-            %a(href="#{wiki_url_with_port}/Liquid%23Tags" target="wiki" title="Open Wiki in a new window") 标签
-            和
+              %a(href="#{wiki_url_with_port}/Theme%20Settings%23Using%20the%20settings%20object%20in%20Liquid" target="wiki" title="Open Wiki in a new window") Set Object
+            You may use any Liquid
+            %a(href="#{wiki_url_with_port}/Liquid%23Tags" target="wiki" title="Open Wiki in a new window") Tag
+            And
             = succeed "." do
-              %a(href="#{wiki_url_with_port}/FilterReference" target="wiki" title="Open Wiki in a new window") 过滤器
+              %a(href="#{wiki_url_with_port}/FilterReference" target="wiki" title="Open Wiki in a new window") Filter
+
       #preview-image.preview-image(style="display:none;")
         %a(target="_blank")
           %img#preview-image-asset/
@@ -155,13 +165,14 @@
       =image_tag 'admin/textmate-logo.gif'
     %h3 Textmate Bundle
     %p
-      如果您的用来修改的编辑器是
+
+      If your editor is used to modify the
       = succeed "," do
         %a(href="http://macromates.com/") Textmate
-      那么你可以参考
-      %a(href="#{wiki_url_with_port}/Textmate_Bundle") 我们的帮助文档
-      说明了如何一步步安装此插件.
-      安装后您将可以看到所有的主题文件，并且修改后会自动同步.
+      Then you can refer to
+      %a(href="#{wiki_url_with_port}/Textmate_Bundle") Our help documentation
+      Explains step by step how to install this plug-in.
+      After installation, you will be able to see all the theme files and will automatically synchronize the modified.
 
 %script(id="theme-item" type="text/x-handlebars-template")
   %a(class="asset-{{{type}}}" href="#") {{{name}}}
@@ -175,23 +186,25 @@
       {{#each commits}}
       %option(tree_id='{{{tree}}}') {{{message}}}
       {{/each}}
-    或者
-    %a(href="#") 取消
+
+    Or
+    %a(href="#") Cancel 
 %script(id="asset-link-rollback-item" type="text/x-handlebars-template")
   %li#asset-link-rollback
-    %a(href="#") 查看之前版本
+    %a(href="#") View previous versions
 %script(id="asset-link-rename-item" type="text/x-handlebars-template")
   %li#asset-link-rename
-    %a(href="#") 重命名
+    %a(href="#") Renaming
 %script(id="asset-link-destroy-item" type="text/x-handlebars-template")
   %li#asset-link-destroy
     %a(href="#")=image_tag 'admin/icons/trash.gif'
 %script(id="asset-rename-form-item" type="text/x-handlebars-template")
   %li#asset-rename-form
     %input#asset-basename-field(type="text")/
-    %a.update(href="#") 提交
-    或者
-    %a.cancel(href="#") 关闭
+
+    %a.update(href="#") Submit
+    Or
+    %a.cancel(href="#") Close
 
 :javascript
   var required_files = #{ShopTheme::REQUIRED_FILES};
