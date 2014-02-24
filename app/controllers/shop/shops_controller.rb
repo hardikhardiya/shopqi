@@ -39,7 +39,7 @@ class Shop::ShopsController < Shop::AppController
         session['storefront_digest'] = true
         redirect_to '/'
       else
-        flash[:error] = '密码不正确，请重试.'
+        flash[:error] = 'Password is incorrect, please try again.'
       end
     end
   end
