@@ -87,7 +87,7 @@ describe "Shippings", js: true do
           end
         end
         page.should have_content('普通快递')
-        page.should have_content('0.0kg 到 25.0kg')
+        page.should have_content('0.0kg To 25.0kg')
         page.should have_content('¥10.0 元')
         click_on '编辑'
         fill_in '名称', with: 'EMS'
@@ -96,7 +96,7 @@ describe "Shippings", js: true do
         fill_in 'weight_based_shipping_rate[price]', with: '80'
         click_on '保存'
         page.should have_content('顺丰快递')
-        page.should have_content('25.0kg 到 50.0kg')
+        page.should have_content('25.0kg To 50.0kg')
         page.should have_content('¥80.0 元')
       end
 
