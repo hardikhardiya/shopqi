@@ -3,6 +3,13 @@
 Shopqi::Application.routes.draw do
 
   mount Doorkeeper::Engine => '/oauth'
+  
+  match 'auth/:provider/callback', to: 'sessions#create'
+  match 'auth/failure', to: redirect('/')
+  match 'signout', to: 'sessions#destroy', as: 'signout'
+
+  match "/fb_share/auth" => "fb_share#auth"  , :method => :get , :as => :fb_auth 
+  match "/fb_share/callback" => "fb_share#callback"  , :method => :get , :as => :fb_callback
 
   namespace :api, defaults: {format: 'json'} do
     scope module: :v1, constraints: ApiConstraints.new(version: 1, default: true) do
@@ -97,7 +104,7 @@ Shopqi::Application.routes.draw do
       end
       get '/robots.txt', to: 'home#robots'
     end
-
+     
     #官网后台管理
     ActiveAdmin.routes(self)
     authenticate :admin_user do # 管理员权限

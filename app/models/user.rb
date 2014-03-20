@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
          #, :validatable # 校验要限制在shop范围下，因此不能使用devise自带校验 issue#287
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :id, :email, :password, :password_confirmation,:admin, :remember_me,:name, :shop_attributes,:phone, :bio,  :receive_announcements,:avatar_image
+  attr_accessible :id, :email, :password, :password_confirmation,:admin, :remember_me,:name, :shop_attributes,:phone, :bio,  :receive_announcements,:avatar_image,:uid,:provider,:oauth_token,:oauth_expires_at
 
   validates_presence_of   :email
   validates :email, uniqueness: {scope: :shop_id}, format: {with: /\A[^@]+@([^@\.]+\.)+[^@\.]+\z/ }, if: :email_changed?
@@ -83,6 +83,48 @@ class User < ActiveRecord::Base
     !persisted? || !password.nil? || !password_confirmation.nil?
   end
 
+  def self.from_omniauth(auth)
+    
+    #debugger
+    #user = FbGraph::User.me(ACCESS_TOKEN)
+    where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
+      debugger
+      user.provider = auth.provider
+      user.uid = auth.uid
+      user.email = auth.info.email
+      user.name = auth.info.name
+      user.oauth_token = auth.credentials.token
+      user.oauth_expires_at = Time.at(auth.credentials.expires_at)
+      #debugger
+      begin
+      user.save!
+      p 'I should never get executed'
+      rescue => e
+        p e.message
+      end
+    end
+  end
+  def facebook_it(url)
+    debugger
+  pages = FbGraph::User.me(APP_CONFIG['facebook_access_token']).accounts.first
+  shorten_url = shorten_url(url) # create a bit.ly link
+  pages.feed!(
+    :message => "#{title}",
+    :link => shorten_url,
+    :description => "#{content[0..280]}"
+  )
+end
+def share(url)
+  #tweet(url)
+  facebook_it(url)
+end
+
+def publish
+  url = job_url(@job)
+  @job = Job.find(params[:id])
+  @job.publish
+  @job.share(url)
+end
 end
 
 Blog

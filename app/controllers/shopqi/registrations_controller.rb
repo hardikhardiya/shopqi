@@ -25,9 +25,16 @@ class Shopqi::RegistrationsController < Devise::RegistrationsController
       build_resource
       resource.shop.themes.first.theme_id ||= Theme.default.id
       resource.shop.email = resource.email #Default mailbox store when registered user mailboxes
+      unless session[:uid].nil? && session[:provider].nil? && session[:oauth_token].nil? && session[:oauth_expires_at].nil
+        resource.uid = session[:uid]
+        resource.provider = session[:provider]
+        resource.oauth_token = session[:oauth_token]
+        resource.oauth_expires_at = session[:oauth_expires_at]
+      end
       if resource.save
         Rails.cache.write(registered_cache_key, true, expires_in: 24.hours) # Avoid duplication of registration
         data[:token] = resource.authentication_token
+        flash[:notice] = "shop is created sucessfully"
       else
         data[:errors] = resource.errors
       end
